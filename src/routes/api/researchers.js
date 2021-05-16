@@ -12,11 +12,8 @@ let app = express();
 app.post('/send', function (req) {
     Schemas.researcherAccount.createResearcher(new Schemas.researcherAccount(req.body), function (err, result) {
         if (err) throw err;
-        if (DebugVariables.verifyEmail) {
-            req.body["email"] = req.body.to;
-            req.body["isverified"] = "false";
-            Email.verifyEmail(req, result);
-        }
+        req.body["email"] = req.body.to;
+        req.body["isverified"] = "false";
     });
 });
 

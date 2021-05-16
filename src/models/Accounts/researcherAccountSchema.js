@@ -2,7 +2,7 @@
  * Created by ed on 01/08/16.
  */
 var mongoose = require('mongoose');
-var bcrypt = require('bcryptjs');
+var bcrypt = require('bcrypt');
 
 var researcherAccountSchema = mongoose.Schema({
     forename: {

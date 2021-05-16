@@ -1,10 +1,11 @@
 "use strict";
 
+require('dotenv').config()
+
 let Globals = require('./routes/Globals');
 let express = require('express');
 
 let path = require('path');
-let fs = require('fs');
 let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let exphbs = require('express-handlebars');
@@ -14,13 +15,25 @@ let passport = require('passport');
 let bodyParser = require('body-parser');
 
 let mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost/neurobranch_db');
+let csvDownloadEndpoints = require("./routes/api/csvDownload");
+
+let candidateDelegationEndpoints = require("./routes/api/candidateDelegation");
+let candidateEndpoints = require("./routes/api/candidates");
+let debugEndpoints = require("./routes/api/debug");
+let eligibilityEndpoints = require("./routes/api/eligibility");
+let emailEndpoints = require("./routes/api/email");
+let questionEndpoints = require("./routes/api/questions");
+let requestedCandidateEndpoints = require("./routes/api/requestedCandidates");
+let researcherEndpoints = require("./routes/api/researchers");
+let responseEndpoints = require("./routes/api/response");
+let trialEndpoints = require("./routes/api/trial");
+let verifiedCandidateEndpoints = require("./routes/api/verifiedCandidates");
+let Scheduler = require("./routes/logic/scheduler");
+
+mongoose.connect(process.env.MONGODB_URL);
 
 let routes = require(Globals.INDEX_ROUTE);
 let users = require(Globals.USERS_ROUTE);
-
-let util = require('util');
-let async = require('async');
 let app = express();
 
 app.set('views', path.join(__dirname, 'views'));
@@ -57,47 +70,23 @@ app.get('/', function (req, res) {
     res.render('mainpage');
 });
 
-let candidateDelegationEndpoints = require("./routes/api/candidateDelegation");
 app.use(candidateDelegationEndpoints);
-
-let candidateEndpoints = require("./routes/api/candidates");
 app.use(candidateEndpoints);
-
-let debugEndpoints = require("./routes/api/debug");
 app.use(debugEndpoints);
-
-let eligibilityEndpoints = require("./routes/api/eligibility");
 app.use(eligibilityEndpoints);
-
-let emailEndpoints = require("./routes/api/email");
 app.use(emailEndpoints);
-
-let questionEndpoints = require("./routes/api/questions");
 app.use(questionEndpoints);
-
-let requestedCandidateEndpoints = require("./routes/api/requestedCandidates");
 app.use(requestedCandidateEndpoints);
-
-let researcherEndpoints = require("./routes/api/researchers");
 app.use(researcherEndpoints);
-
-let responseEndpoints = require("./routes/api/response");
 app.use(responseEndpoints);
-
-let trialEndpoints = require("./routes/api/trial");
 app.use(trialEndpoints);
-
-let verifiedCandidateEndpoints = require("./routes/api/verifiedCandidates");
 app.use(verifiedCandidateEndpoints);
-
-let csvDownloadEndpoints = require("./routes/api/csvDownload");
 app.use(csvDownloadEndpoints);
-
 app.use('/', routes);
 app.use('/users', users);
+
 app.set('port', (process.env.PORT || Globals.PORT));
 
-let Scheduler = require("./routes/logic/scheduler");
 Scheduler.scheduleUpdate();
 
 app.listen(app.get('port'), function () {

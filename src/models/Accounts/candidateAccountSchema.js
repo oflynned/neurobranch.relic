@@ -3,7 +3,7 @@
  */
 "use strict";
 let mongoose = require('mongoose');
-let bcrypt = require('bcryptjs');
+let bcrypt = require('bcrypt');
 
 let candidateAccountSchema = mongoose.Schema({
     password: {

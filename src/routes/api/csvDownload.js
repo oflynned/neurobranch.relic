@@ -7,8 +7,6 @@ let Schemas = require("../persistence/schemas");
 let express = require("express");
 let json2csv = require('json2csv');
 let fs = require('fs');
-let path = require('path');
-let mime = require('mime');
 
 let app = express();
 
