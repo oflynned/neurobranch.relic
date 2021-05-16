@@ -54,6 +54,18 @@ We did not have enough connections and industry knowledge to understand the clie
 What we should have done is to reach out to people involved in the industry on LinkedIn, try to understand them, create a high fidelity mockup in Adobe XD/Sketch/Figma, and only then create a real solution.
 By jumping straight in, we shot ourselves in the foot.
 
+- Ethics
+
+"Clinical trials will be cool! Let's aggregate some relevant info from a wearable!". On the surface, this is an interesting idea; right?
+Trials need information, participants can lie, but their wearables give a lot of information about them.
+Once you dig into this idea, this is a very grey area around the collection of personal metrics.
+For example, how long will this data be collected for?
+Will you have my location data?
+What about if you get hacked?
+How don't I know that you will target me with ads?
+Can I opt out?
+Will you delete my data if I request so?
+
 #### :money_mouth_face: Big Bizness
 
 - Lack of focus
@@ -117,8 +129,6 @@ Most packages were `latest` or `*`.
 
 #### :baby: Inexperience
 
-- The entire codebase
-
 Clients could send anything to the API and it would be persisted to the database without question.
 By jumping on the hype train of MongoDB, we didn't realise that these restrictions of schema actually provide some value.
 
@@ -133,7 +143,7 @@ No understanding of CSS
 SOLID was not a thing we understood
 
 Two codebases in two different languages when we could have just stuck with webdev until there was a reason for an app.
-Perhaps a sign of the times? Apps were all the hype
+Perhaps it was a sign of the times? Apps were all the hype and web was less interesting.
 
 Didn't create a design system or take time to create actual mockups first
 
