@@ -10,13 +10,13 @@ var http = require('http');
 var mime = require('mime');
 
 var request = require('request');
-var candidateSchema = require('../models/Accounts/candidateAccountSchema.js');
-var questionSchema = require('../models/Trials/questionSchema');
-var requestedCandidate = require('../models/Validation/requestedCandidateSchema');
-var verifiedCandidate = require('../models/Validation/verifiedCandidateSchema');
-var researcherAccount = require('../models/Accounts/researcherAccountSchema');
-var trialData = require('../models/Trials/trialSchema');
-var responseData = require('../models/Trials/responseSchema');
+var candidateSchema = require('../../models/Accounts/candidateAccountSchema.js');
+var questionSchema = require('../../models/Trials/questionSchema');
+var requestedCandidate = require('../../models/Validation/requestedCandidateSchema');
+var verifiedCandidate = require('../../models/Validation/verifiedCandidateSchema');
+var researcherAccount = require('../../models/Accounts/researcherAccountSchema');
+var trialData = require('../../models/Trials/trialSchema');
+var responseData = require('../../models/Trials/responseSchema');
 
 //top bar
 router.get('/mainpage', function (req, res) {
@@ -103,7 +103,7 @@ router.get('/trials/:trialid', function (req, res) {
                         trial.state = trial.state.replace(/\b\w/g, l => l.toUpperCase());
 
                         res.render('trial', {
-                            trial: trial,
+                            trial: trial._doc,
                             is_researcher: isResearcher,
                             active_dash: true,
                             req_candidates: req_candidates,

@@ -4,12 +4,12 @@
 "use strict";
 
 let crypto = require("crypto");
-let Email = require("../services/email");
-let ResetPassword = require("../services/resetPassword");
+let Email = require("./services/email");
+let ResetPassword = require("./services/resetPassword");
 
 let Constants = require("../Globals");
 
-let Schemas = require("../persistence/schemas");
+let Schemas = require("./persistence/schemas");
 let express = require("express");
 let app = express();
 

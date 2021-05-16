@@ -3,7 +3,7 @@
  */
 "use strict";
 let Schedule = require('node-schedule');
-let TrialData = require("../../models/Trials/trialSchema");
+let TrialData = require("../../../models/Trials/trialSchema");
 
 const dailyUpdate = 1;
 const weeklyUpdate = dailyUpdate * 7;

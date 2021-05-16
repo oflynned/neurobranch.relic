@@ -3,7 +3,7 @@
  */
 "use strict";
 
-let Schemas = require("../persistence/schemas");
+let Schemas = require("./persistence/schemas");
 let express = require("express");
 let json2csv = require('json2csv');
 let fs = require('fs');

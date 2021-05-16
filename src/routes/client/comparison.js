@@ -2,9 +2,9 @@ let express = require('express');
 let router = express.Router();
 let assert = require('assert');
 
-let QuestionData = require("./persistence/questionData");
-let UserData = require("./persistence/userData");
-let Trial = require("./persistence/trial");
+let QuestionData = require("../api/persistence/questionData");
+let UserData = require("../api/persistence/userData");
+let Trial = require("../api/persistence/trial");
 
 // Get Homepage
 router.get('/', ensureAuthenticated, function (req, res) {

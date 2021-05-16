@@ -3,9 +3,9 @@
  */
 "use strict";
 
-let Email = require("../services/email");
-let DebugVariables = require("../logic/debugVariables");
-let Schemas = require("../persistence/schemas");
+let Email = require("./services/email");
+let DebugVariables = require("./logic/debugVariables");
+let Schemas = require("./persistence/schemas");
 let express = require("express");
 let app = express();
 

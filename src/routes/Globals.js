@@ -16,7 +16,3 @@ exports.ADDRESS = "localhost";
 
 //sensitive info -- change this before we publish
 exports.SECRET = "p*+q#&7h(cc))ts&-#m5y!sj33!%j=xi1m=j-_@s-d90#gn##_";
-
-//routes
-exports.INDEX_ROUTE = "./routes/index";
-exports.USERS_ROUTE = "./routes/users";

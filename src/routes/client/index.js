@@ -1,15 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var assert = require('assert');
 
-var Globals = require("./Globals.js");
-
-var mongoose = require("mongoose");
-mongoose.Promise = global.Promise;
-mongoose.createConnection('localhost:27017/neurobranch_db');
-
-var trialData = require('../models/Trials/trialSchema');
-var researcherData = require('../models/Accounts/researcherAccountSchema');
+var trialData = require('../../models/Trials/trialSchema');
+var researcherData = require('../../models/Accounts/researcherAccountSchema');
 
 var MAX_LENGTH = 300;
 

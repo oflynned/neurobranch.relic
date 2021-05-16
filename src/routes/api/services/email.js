@@ -2,7 +2,7 @@
  * Created by ed on 18/01/2017.
  */
 "use strict";
-let Constants = require("../Globals");
+let Constants = require("../../Globals");
 
 function verifyEmail(req, result) {
     let rand = result.id;

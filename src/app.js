@@ -28,12 +28,12 @@ let researcherEndpoints = require("./routes/api/researchers");
 let responseEndpoints = require("./routes/api/response");
 let trialEndpoints = require("./routes/api/trial");
 let verifiedCandidateEndpoints = require("./routes/api/verifiedCandidates");
-let Scheduler = require("./routes/logic/scheduler");
+let Scheduler = require("./routes/api/logic/scheduler");
+let routes = require('./routes/client');
+let users = require('./routes/client/users');
 
 mongoose.connect(process.env.MONGODB_URL);
 
-let routes = require(Globals.INDEX_ROUTE);
-let users = require(Globals.USERS_ROUTE);
 let app = express();
 
 app.set('views', path.join(__dirname, 'views'));
