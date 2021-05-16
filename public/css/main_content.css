@@ -1,0 +1,32 @@
+/* carousel */
+.content-main {
+    padding-top: 50px;
+}
+
+.content-main-about {
+    padding-top: 100px;
+}
+
+.carousel .item {
+    width: 100%; /*slider width*/
+    max-height: 600px; /*slider height*/
+}
+.carousel .item img {
+    width: 100%; /*img width*/
+}
+
+/*full width container*/
+@media (max-width: 767px) {
+    .block {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+}
+
+/* images */
+.logo-image {
+    max-width: 312px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

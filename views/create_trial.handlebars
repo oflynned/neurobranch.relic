@@ -1,0 +1,116 @@
+<!-- Page Content -->
+<div id="page-content-wrapper">
+    {{#if is_ver }}
+        <div class="container-fluid content-main">
+            <!--"/api/create-trial"-->
+            <form method="post" action="/api/create-trial" id="trial_form">
+
+                <div class="form-horizontal" id="form_main">
+                    <fieldset>
+                        <legend>Trial Details</legend>
+
+                        <div class="form-group">
+                            <label class="control-label" for="Title">Trial Title</label>
+                            <input id="trial_title" name="trial_title" type="text"
+                                   placeholder="Trial Title"
+                                   class="form-control input-md" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="trial_briefdesc">Brief Description</label>
+                            <input id="trial_briefdesc" name="trial_briefdesc" type="text"
+                                   placeholder="Enter Brief Description Here" class="form-control input-md" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="trial_longdesc">Long Description</label>
+                            <textarea class="form-control" id="trial_longdesc" name="trial_longdesc"
+                                      style="resize: vertical" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="trial_waiverform">Waiver Form</label>
+                            <textarea class="form-control" id="trial_waiverform" name="trial_waiverform"
+                                      style="resize: vertical" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class=" control-label" for="trial_frequency">Question Frequency</label>
+                            <select name="trial_frequency" class="form-control">
+                                <option selected>Daily</option>
+                                <option>Weekly</option>
+                                <option>Fortnightly</option>
+                                <option>Monthly</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class=" control-label" for="trial_duration">Question Iterations</label>
+                            <input id="qduration" name="trial_duration" type="number" min="1" step="1"
+                                   placeholder="The number of times notifications will be sent out to answer your trial's questions. (5 weekly = once per week for 5 weeks etc)"
+                                   class="form-control input-md" required>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="form-horizontal" id="form_main2">
+                    <fieldset>
+                        <div id="questionlist">
+                            <div class="dynamic" id="#question-1">
+                                <div class="form-group">
+                                    <label for="q1_title" class=" control-label">1. Question Title</label>
+                                    <input type="text" class="form-control col-md-4 qtitle" name="q1_title"
+                                           placeholder="Enter Title" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="q1_type">Question Type</label>
+                                    <select class="form-control qtype" name="q1_type" required>
+                                        <option data-cat="" disabled selected>Select Answer Type</option>
+                                        <option data-cat="">Text</option>
+                                        <option data-cat="">Scale</option>
+                                        <option data-cat="choice">Checkbox</option>
+                                        <option data-cat="choice">Radio</option>
+                                    </select>
+                                </div>
+                                <div class="form-group hide questions_answers">
+                                    <label for="no_of_options">No Of Answers</label>
+                                    <select class="form-control no_of_options" name="q1_no_of_options" required>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select></div>
+                                <div class="form-group hide answers">
+                                    <label>Answers</label>
+                                    <div class="col-lg-12 answers_content"></div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="form-group">
+                                <a href="#" id="add-more" class="btn btn-info">Add Question</a>
+                                <a href="#" id="btn-remove" class="btn btn-warning pull-right">Remove Question</a>
+                            </div>
+                    </fieldset>
+                </div>
+                <div class="form-group">
+                    <button id="btnsubmit" class="btn btn-primary" form="trial_form">Save Trial</button>
+                </div>
+            </form>
+        </div>
+    {{else}}
+        <div>
+            Your Profile is not verified, please
+            look in your inbox of the e-mail address
+            with which you registered. Once there you
+            should see an email from us with a link to
+            click. Please click the link to verify your
+            profile and proceed to trial creation.
+        </div>
+    {{/if}}
+</div>

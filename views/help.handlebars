@@ -1,0 +1,49 @@
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script>
+    $(function() {
+        $( "#accordion" ).accordion();
+    });
+</script>
+
+<div id="page-content-wrapper">
+    <div class="container-fluid content-main">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- title -->
+                <div class="page-header">
+                    <h3>Help</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- container for holding trial data -->
+        <div id="dashboard-content-holder">
+            <div id="accordion">
+                <button class="btn btn-lg btn-primary btn-block">I forgot my password</button>
+                <div>
+                    <p>
+                       If you have forgotten your password, please input your email below and click "Reset Password".
+                        It may take up to 5 minutes for an email to arrive with further instructions on resetting your password for your account.
+                    <form method="POST" action="/forgot">
+                        <legend>Forgotten Password</legend>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" autofocus class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Reset Password</button>
+                    </form>
+                    </p>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block">I need to talk to a human!</button>
+                <div>
+                    <p>
+                        Do not hesitate to e-mail us at <a href="mailto:contact@glassbyte.com">contact@glassbyte.com</a>.
+                        We will try to get back to you as soon as possible.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
