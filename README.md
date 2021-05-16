@@ -79,11 +79,11 @@ A candidate generally continues to visit their doctor on a regular basis and doe
 
 - Metrics
 
-We had no idea who was using our platform, any meta about them, and nothing we could gauge.
+We had no idea who was using our platform, any metadata about them, and nothing we could gauge.
 
 - Reinventing the wheel
   
-Rather than reimplenting authentication, we should have used a pre-existing solution to save some time.
+Rather than reimplementing authentication, we should have used a pre-existing solution to save some time.
 
 - Seed money
 
