@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  neurobranch-api:
+    build:
+      context: .
+    env_file:
+      - .env
+    ports:
+      - 3000:3000
+    depends_on:
+      - neurobranch-db
+    command: npm start
+
+  neurobranch-db:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+
+volumes:
+  mongodb:
