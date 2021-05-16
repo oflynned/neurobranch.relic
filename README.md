@@ -24,14 +24,6 @@ A lot of small things built up to become a huge problem when trying to deliver t
 
 #### :hourglass_flowing_sand:  Project management
 
-- Lack of focus
-
-Our intentions were valiant, but ultimately came up short as we did not know what we wanted our project to be.
-The project at one point had a newsfeed, then ended up collating trial information for interested people to join.
-What we didn't consider is that the information collected and how it's presented are more important than digitising the process of joining a trial.
-We did not understand the need to visualise data, or regulations involved when a trial commences.
-A candidate generally continues to visit their doctor on a regular basis and does not receive additional treatment for partaking in a trial.
-
 - No branching strategy
 
 Everything was committed to master instead of creating branches for features, chores, refactors, fixes.
@@ -64,7 +56,30 @@ By jumping straight in, we shot ourselves in the foot.
 
 #### :money_mouth_face: Big Bizness
 
-Did not understand the needs of a client
+- Lack of focus
+
+Our intentions were valiant, but ultimately came up short as we did not know what we wanted our project to be.
+The project at one point had a newsfeed, then ended up collating trial information for interested people to join.
+
+What we didn't consider is that the information collected and how it's presented are more important than digitising the process of joining a trial.
+We did not understand the need to visualise data, or regulations involved when a trial commences.
+A candidate generally continues to visit their doctor on a regular basis and does not receive additional treatment for partaking in a trial.
+
+- Metrics
+
+We had no idea who was using our platform, any meta about them, and nothing we could gauge.
+
+- Reinventing the wheel
+  
+Rather than reimplenting authentication, we should have used a pre-existing solution to save some time.
+
+- Seed money
+
+We were given about 3K euro to build this solution, but we did not come up with a plan to use it effectively.
+Hire contractors? Nope.
+How will we make money from this? Should we create some pricing strategies? No.
+Buy some hardware to aid development? Nah.
+How about discovering customers? No.
 
 #### :skull_and_crossbones: Quality
 
