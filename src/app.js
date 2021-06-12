@@ -32,7 +32,7 @@ let Scheduler = require("./routes/api/logic/scheduler");
 let routes = require('./routes/client');
 let users = require('./routes/client/users');
 
-mongoose.connect(process.env.MONGODB_URL);
+mongoose.connect(process.env.MONGO_URL);
 
 let app = express();
 
